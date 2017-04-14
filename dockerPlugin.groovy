@@ -54,15 +54,15 @@ println 'Added docker cloud credentials.'
 /////////////////////////////////////////////////////:
 // Docker Cloud config per-se
 /////////////////////////////////////////////////////:
-def swarmMasterUrl = "registry url"
-assert swarmMasterUrl != null : "SWARM_MASTER_URL env var not set!"
+def dockerRegistryUrl = "registry.hub.docker.com"
+assert dockerRegistryUrl != null : "dockerRegistryUrl env var not set!"
 
 def docker_settings = [:]
 docker_settings =
 [
     [
         name: 'docker registry',
-        serverUrl: swarmMasterUrl,
+        serverUrl: dockerRegistryUrl,
         containerCapStr: '100',
         connectionTimeout: 5,
         readTimeout: 15,
